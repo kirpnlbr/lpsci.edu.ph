@@ -158,6 +158,7 @@ module.exports = {
     },
   },
   variants: {
++   backgroundImage: ['hover', 'focus'],
     backgroundColor: ['responsive', 'hover', 'focus', 'group-hover'],
     textColor: ['responsive', 'hover', 'focus', 'group-hover'],
     translate: ['responsive', 'hover', 'focus', 'group-hover'],
