@@ -4,10 +4,6 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: theme => ({
-        'hero-pattern': "url('img/hero-pattern.svg')",
-        'footer-texture': "url('img/footer-texture.png')"
-      })
       colors: {
         gray: {
           100: '#FBFBFB',
@@ -50,13 +46,7 @@ module.exports = {
         '1/1': '100%',
       },
       fontFamily: {
-        _inter: ['Inter', 'sans-serif'],
-        get inter() {
-          return this._inter;
-        },
-        set inter(value) {
-          this._inter = value;
-        },
+        inter: ['Inter', 'sans-serif']
       },
       fontSize: {
         xs: '0.75rem',
@@ -158,8 +148,6 @@ module.exports = {
     },
   },
   variants: {
-    extend: {}
-+   backgroundImage: ['hover', 'focus'],
     backgroundColor: ['responsive', 'hover', 'focus', 'group-hover'],
     textColor: ['responsive', 'hover', 'focus', 'group-hover'],
     translate: ['responsive', 'hover', 'focus', 'group-hover'],
