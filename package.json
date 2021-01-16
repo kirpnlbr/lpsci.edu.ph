@@ -11,7 +11,8 @@
     "lint:js": "./node_modules/.bin/eslint \"src/**/*.js\"",
     "lint:styles": "stylelint \"src/**/*.scss\"",
     "build": "cross-env NODE_ENV=production webpack --config ./config/webpack.config.js",
-    "deploy": "node ./config/site.deploy.js"
+    "deploy": "node ./config/site.deploy.js",
+    "build-css": "tailwindcss build tailwind.config.js -o src/css/styles.css"
   },
   "devDependencies": {
     "@babel/cli": "^7.11.6",
