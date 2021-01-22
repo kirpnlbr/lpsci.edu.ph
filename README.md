@@ -3,7 +3,7 @@
 
 ## Built With
 
-* [TailwindCSS](https://tailwindcss.com) - The web framework used
+* [TailwindCSS](https://tailwindcss.com) - CSS framework
 
 ## Authors
 
