@@ -1,19 +1,19 @@
-const webpack = require('webpack');
-const cssnano = require('cssnano');
-const glob = require('glob');
-const path = require('path');
-const fs = require('fs');
+const webpack = require("webpack");
+const cssnano = require("cssnano");
+const glob = require("glob");
+const path = require("path");
+const fs = require("fs");
 
-const WebpackBar = require('webpackbar');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const HTMLWebpackPlugin = require('html-webpack-plugin');
-const StyleLintPlugin = require('stylelint-webpack-plugin');
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const WebpackBar = require("webpackbar");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const HTMLWebpackPlugin = require("html-webpack-plugin");
+const StyleLintPlugin = require("stylelint-webpack-plugin");
+const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
-const config = require('./site.config');
+const config = require("./site.config");
 
 // Hot module replacement
 const hmr = new webpack.HotModuleReplacementPlugin();
@@ -24,7 +24,7 @@ const optimizeCss = new OptimizeCssAssetsPlugin({
   cssProcessor: cssnano,
   cssProcessorPluginOptions: {
     preset: [
-      'default',
+      "default",
       {
         discardComments: {
           removeAll: true,
@@ -42,10 +42,10 @@ const clean = new CleanWebpackPlugin();
 const copy = new CopyWebpackPlugin({
   patterns: [
     {
-      from: 'images',
-      to: 'images',
+      from: "images",
+      to: "images",
       globOptions: {
-        ignore: ['**/favicon.*'],
+        ignore: ["**/favicon.*"],
       },
     },
   ],
@@ -56,31 +56,32 @@ const stylelint = new StyleLintPlugin();
 
 // Extract CSS
 const cssExtract = new MiniCssExtractPlugin({
-  filename: 'style.[contenthash].css',
+  filename: "style.[contenthash].css",
 });
 
 // HTML generation
 const paths = [];
-const generateHTMLPlugins = () => glob.sync('./src/*.html').map((dir) => {
-  const filename = path.basename(dir);
+const generateHTMLPlugins = () =>
+  glob.sync("./src/*.html").map((dir) => {
+    const filename = path.basename(dir);
 
-  if (filename !== '404.html') {
-    paths.push(filename);
-  }
+    if (filename !== "404.html") {
+      paths.push(filename);
+    }
 
-  return new HTMLWebpackPlugin({
-    filename,
-    template: path.join(config.root, config.paths.src, filename),
-    meta: {
-      viewport: config.viewport,
-    },
+    return new HTMLWebpackPlugin({
+      filename,
+      template: path.join(config.root, config.paths.src, filename),
+      meta: {
+        viewport: config.viewport,
+      },
+    });
   });
-});
 
 // Favicons
 const favicons = new FaviconsWebpackPlugin({
   logo: config.favicon,
-  prefix: 'images/favicons/',
+  prefix: "images/favicons/",
   favicons: {
     appName: config.site_name,
     appDescription: config.site_description,
@@ -102,7 +103,7 @@ const favicons = new FaviconsWebpackPlugin({
 
 // Webpack bar
 const webpackBar = new WebpackBar({
-  color: '#5F48FF',
+  color: "#5F48FF",
 });
 
 // Google analytics
@@ -115,14 +116,17 @@ class GoogleAnalyticsPlugin {
   }
 
   apply(compiler) {
-    compiler.hooks.compilation.tap('GoogleAnalyticsPlugin', (compilation) => {
+    compiler.hooks.compilation.tap("GoogleAnalyticsPlugin", (compilation) => {
       HTMLWebpackPlugin.getHooks(compilation).beforeEmit.tapAsync(
-        'GoogleAnalyticsPlugin',
+        "GoogleAnalyticsPlugin",
         (data, cb) => {
           // eslint-disable-next-line no-param-reassign
-          data.html = data.html.replace('</head>', `${CODE.replace('{{ID}}', this.id)}</head>`);
+          data.html = data.html.replace(
+            "</head>",
+            `${CODE.replace("{{ID}}", this.id)}</head>`
+          );
           cb(null, data);
-        },
+        }
       );
     });
   }
@@ -134,13 +138,13 @@ const google = new GoogleAnalyticsPlugin({
 
 module.exports = [
   clean,
-  config.env === 'production' && copy,
+  config.env === "production" && copy,
   stylelint,
   cssExtract,
   ...generateHTMLPlugins(),
   fs.existsSync(config.favicon) && favicons,
-  config.env === 'production' && optimizeCss,
+  config.env === "production" && optimizeCss,
   config.googleAnalyticsUA && google,
   webpackBar,
-  config.env === 'development' && hmr,
+  config.env === "development" && hmr,
 ].filter(Boolean);

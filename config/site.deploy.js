@@ -1,19 +1,19 @@
-const path = require('path');
-const config = require('./site.config');
+const path = require("path");
+const config = require("./site.config");
 // eslint-disable-next-line import/order
-const FtpDeploy = require('ftp-deploy');
+const FtpDeploy = require("ftp-deploy");
 
 const ftpDeploy = new FtpDeploy();
 
 ftpDeploy.deploy({
   // FTP username
-  user: 'username',
+  user: "username",
 
   // FTP Password
-  password: 'password',
+  password: "password",
 
   // FTP Host
-  host: 'ftp.yourwebsite.com',
+  host: "ftp.yourwebsite.com",
 
   // FTP Port
   port: 21,
@@ -22,10 +22,10 @@ ftpDeploy.deploy({
   localRoot: path.join(config.root, config.paths.dist),
 
   // Remote FTP folder to upload to
-  remoteRoot: '/public_html/',
+  remoteRoot: "/public_html/",
 
   // Define what files to include in the upload (by default, upload everything in dist/ folder)
-  include: ['**/*'],
+  include: ["**/*"],
 
   // Remove files in FTP folder before uploading
   deleteRemote: true,

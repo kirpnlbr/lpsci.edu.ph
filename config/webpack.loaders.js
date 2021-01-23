@@ -1,9 +1,9 @@
 /* eslint-disable global-require */
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const config = require('./site.config');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const config = require("./site.config");
 
 // Define common loader constants
-const sourceMap = config.env !== 'production';
+const sourceMap = config.env !== "production";
 
 // Javascript loaders
 const js = {
@@ -11,28 +11,28 @@ const js = {
   exclude: /node_modules/,
   use: [
     {
-      loader: 'babel-loader',
+      loader: "babel-loader",
       options: {
-        presets: ['@babel/preset-env'],
+        presets: ["@babel/preset-env"],
       },
     },
-    'eslint-loader',
+    "eslint-loader",
   ],
 };
 
 const cssLoader = {
-  loader: 'css-loader',
+  loader: "css-loader",
   options: {
     sourceMap,
   },
 };
 
 const postcssLoader = {
-  loader: 'postcss-loader',
+  loader: "postcss-loader",
   options: {
     plugins: [
-      require('tailwindcss')('./config/tailwind.config.js'),
-      require('autoprefixer')(),
+      require("tailwindcss")("./config/tailwind.config.js"),
+      require("autoprefixer")(),
     ],
     sourceMap,
   },
@@ -40,11 +40,7 @@ const postcssLoader = {
 
 const css = {
   test: /\.css$/,
-  use: [
-    MiniCssExtractPlugin.loader,
-    cssLoader,
-    postcssLoader,
-  ],
+  use: [MiniCssExtractPlugin.loader, cssLoader, postcssLoader],
 };
 
 const sass = {
@@ -54,7 +50,7 @@ const sass = {
     cssLoader,
     postcssLoader,
     {
-      loader: 'sass-loader',
+      loader: "sass-loader",
       options: {
         sourceMap,
       },
@@ -69,7 +65,7 @@ const less = {
     cssLoader,
     postcssLoader,
     {
-      loader: 'less-loader',
+      loader: "less-loader",
       options: {
         sourceMap,
       },
@@ -81,10 +77,10 @@ const media = {
   test: /\.(gif|png|jpe?g|svg|mp4|webm)$/,
   use: [
     {
-      loader: 'file-loader',
+      loader: "file-loader",
       query: {
-        name: '[name].[ext]',
-        outputPath: 'images/',
+        name: "[name].[ext]",
+        outputPath: "images/",
       },
     },
   ],
@@ -95,20 +91,13 @@ const fonts = {
   exclude: /images/,
   use: [
     {
-      loader: 'file-loader',
+      loader: "file-loader",
       query: {
-        name: '[name].[ext]',
-        outputPath: 'fonts/',
+        name: "[name].[ext]",
+        outputPath: "fonts/",
       },
     },
   ],
 };
 
-module.exports = [
-  js,
-  css,
-  sass,
-  less,
-  media,
-  fonts,
-];
+module.exports = [js, css, sass, less, media, fonts];

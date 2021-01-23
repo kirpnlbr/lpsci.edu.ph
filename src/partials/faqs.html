@@ -1,95 +1,235 @@
 <section>
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-        <div class="py-12 md:py-20 border-t border-gray-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="py-12 md:py-20 border-t border-gray-200">
+      <!-- Section header -->
+      <div class="max-w-3xl mx-auto text-center pb-20">
+        <h2 class="h2">Questions & Answers</h2>
+      </div>
 
-            <!-- Section header -->
-            <div class="max-w-3xl mx-auto text-center pb-20">
-                <h2 class="h2">Questions & Answers</h2>
-            </div>
-
-            <!-- Faqs -->
-            <ul class="max-w-3xl mx-auto pl-12">
-                <li x-data="{ expanded: false }">
-                    <button class="flex items-center w-full text-lg font-medium text-left py-5 border-t border-gray-200" @click="expanded = !expanded" :aria-expanded="expanded">
-                        <svg class="w-4 h-4 fill-current text-blue-500 flex-shrink-0 mr-8 -ml-12" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                            <rect y="7" width="16" height="2" rx="1" class="transform origin-center transition duration-200 ease-out" :class="{'rotate-180': expanded}" />
-                            <rect y="7" width="16" height="2" rx="1" class="transform origin-center rotate-90 transition duration-200 ease-out" :class="{'rotate-180': expanded}" />
-                        </svg>
-                        <span>Do I need coding knowledge to use this product?</span>
-                    </button>
-                    <div
-                        x-ref="item"
-                        class="text-gray-600 overflow-hidden transition-all duration-300 ease-in-out"
-                        :style="expanded ? 'max-height: ' + $refs.item.scrollHeight + 'px; opacity: 1' : 'max-height: 0; opacity: 0'"
-                    >
-                        <p class="pb-5">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        </p>
-                    </div>
-                </li>
-                <li x-data="{ expanded: false }">
-                    <button class="flex items-center w-full text-lg font-medium text-left py-5 border-t border-gray-200" @click="expanded = !expanded" :aria-expanded="expanded">
-                        <svg class="w-4 h-4 fill-current text-blue-500 flex-shrink-0 mr-8 -ml-12" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                            <rect y="7" width="16" height="2" rx="1" class="transform origin-center transition duration-200 ease-out" :class="{'rotate-180': expanded}" />
-                            <rect y="7" width="16" height="2" rx="1" class="transform origin-center rotate-90 transition duration-200 ease-out" :class="{'rotate-180': expanded}" />
-                        </svg>
-                        <span>Do you have student or non-profit discounts?</span>
-                    </button>
-                    <div
-                        x-ref="item"
-                        class="text-gray-600 overflow-hidden transition-all duration-300 ease-in-out"
-                        :style="expanded ? 'max-height: ' + $refs.item.scrollHeight + 'px; opacity: 1' : 'max-height: 0; opacity: 0'"
-                    >
-                        <p class="pb-5">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        </p>
-                    </div>
-                </li>
-                <li x-data="{ expanded: false }">
-                    <button class="flex items-center w-full text-lg font-medium text-left py-5 border-t border-gray-200" @click="expanded = !expanded" :aria-expanded="expanded">
-                        <svg class="w-4 h-4 fill-current text-blue-500 flex-shrink-0 mr-8 -ml-12" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                            <rect y="7" width="16" height="2" rx="1" class="transform origin-center transition duration-200 ease-out" :class="{'rotate-180': expanded}" />
-                            <rect y="7" width="16" height="2" rx="1" class="transform origin-center rotate-90 transition duration-200 ease-out" :class="{'rotate-180': expanded}" />
-                        </svg>
-                        <span>Is there a way to become an Affiliate reseller of this product?</span>
-                    </button>
-                    <div x-ref="item" class="text-gray-600 overflow-hidden transition-all duration-300 ease-in-out" :style="expanded ? 'max-height: ' + $refs.item.scrollHeight + 'px; opacity: 1' : 'max-height: 0; opacity: 0'">
-                        <p class="pb-5">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        </p>
-                    </div>
-                </li>
-                <li x-data="{ expanded: true }">
-                    <button class="flex items-center w-full text-lg font-medium text-left py-5 border-t border-gray-200" @click="expanded = !expanded" :aria-expanded="expanded">
-                        <svg class="w-4 h-4 fill-current text-blue-500 flex-shrink-0 mr-8 -ml-12" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                            <rect y="7" width="16" height="2" rx="1" class="transform origin-center transition duration-200 ease-out" :class="{'rotate-180': expanded}" />
-                            <rect y="7" width="16" height="2" rx="1" class="transform origin-center rotate-90 transition duration-200 ease-out" :class="{'rotate-180': expanded}" />
-                        </svg>
-                        <span>What is the difference between the Free and Paid versions?</span>
-                    </button>
-                    <div x-ref="item" class="text-gray-600 overflow-hidden transition-all duration-300 ease-in-out" :style="expanded ? 'max-height: ' + $refs.item.scrollHeight + 'px; opacity: 1' : 'max-height: 0; opacity: 0'">
-                        <p class="pb-5">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        </p>
-                    </div>
-                </li>
-                <li x-data="{ expanded: false }">
-                    <button class="flex items-center w-full text-lg font-medium text-left py-5 border-t border-gray-200" @click="expanded = !expanded" :aria-expanded="expanded">
-                        <svg class="w-4 h-4 fill-current text-blue-500 flex-shrink-0 mr-8 -ml-12" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                            <rect y="7" width="16" height="2" rx="1" class="transform origin-center transition duration-200 ease-out" :class="{'rotate-180': expanded}" />
-                            <rect y="7" width="16" height="2" rx="1" class="transform origin-center rotate-90 transition duration-200 ease-out" :class="{'rotate-180': expanded}" />
-                        </svg>
-                        <span>How can I change the owner of a workspace?</span>
-                    </button>
-                    <div x-ref="item" class="text-gray-600 overflow-hidden transition-all duration-300 ease-in-out" :style="expanded ? 'max-height: ' + $refs.item.scrollHeight + 'px; opacity: 1' : 'max-height: 0; opacity: 0'">
-                        <p class="pb-5">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        </p>
-                    </div>
-                </li>
-                <span class="block border-t border-gray-200" aria-hidden="true"></span>
-            </ul>
-            
-        </div>
+      <!-- Faqs -->
+      <ul class="max-w-3xl mx-auto pl-12">
+        <li x-data="{ expanded: false }">
+          <button
+            class="flex items-center w-full text-lg font-medium text-left py-5 border-t border-gray-200"
+            @click="expanded = !expanded"
+            :aria-expanded="expanded"
+          >
+            <svg
+              class="w-4 h-4 fill-current text-blue-500 flex-shrink-0 mr-8 -ml-12"
+              viewBox="0 0 16 16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                y="7"
+                width="16"
+                height="2"
+                rx="1"
+                class="transform origin-center transition duration-200 ease-out"
+                :class="{'rotate-180': expanded}"
+              />
+              <rect
+                y="7"
+                width="16"
+                height="2"
+                rx="1"
+                class="transform origin-center rotate-90 transition duration-200 ease-out"
+                :class="{'rotate-180': expanded}"
+              />
+            </svg>
+            <span>Do I need coding knowledge to use this product?</span>
+          </button>
+          <div
+            x-ref="item"
+            class="text-gray-600 overflow-hidden transition-all duration-300 ease-in-out"
+            :style="expanded ? 'max-height: ' + $refs.item.scrollHeight + 'px; opacity: 1' : 'max-height: 0; opacity: 0'"
+          >
+            <p class="pb-5">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </div>
+        </li>
+        <li x-data="{ expanded: false }">
+          <button
+            class="flex items-center w-full text-lg font-medium text-left py-5 border-t border-gray-200"
+            @click="expanded = !expanded"
+            :aria-expanded="expanded"
+          >
+            <svg
+              class="w-4 h-4 fill-current text-blue-500 flex-shrink-0 mr-8 -ml-12"
+              viewBox="0 0 16 16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                y="7"
+                width="16"
+                height="2"
+                rx="1"
+                class="transform origin-center transition duration-200 ease-out"
+                :class="{'rotate-180': expanded}"
+              />
+              <rect
+                y="7"
+                width="16"
+                height="2"
+                rx="1"
+                class="transform origin-center rotate-90 transition duration-200 ease-out"
+                :class="{'rotate-180': expanded}"
+              />
+            </svg>
+            <span>Do you have student or non-profit discounts?</span>
+          </button>
+          <div
+            x-ref="item"
+            class="text-gray-600 overflow-hidden transition-all duration-300 ease-in-out"
+            :style="expanded ? 'max-height: ' + $refs.item.scrollHeight + 'px; opacity: 1' : 'max-height: 0; opacity: 0'"
+          >
+            <p class="pb-5">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </div>
+        </li>
+        <li x-data="{ expanded: false }">
+          <button
+            class="flex items-center w-full text-lg font-medium text-left py-5 border-t border-gray-200"
+            @click="expanded = !expanded"
+            :aria-expanded="expanded"
+          >
+            <svg
+              class="w-4 h-4 fill-current text-blue-500 flex-shrink-0 mr-8 -ml-12"
+              viewBox="0 0 16 16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                y="7"
+                width="16"
+                height="2"
+                rx="1"
+                class="transform origin-center transition duration-200 ease-out"
+                :class="{'rotate-180': expanded}"
+              />
+              <rect
+                y="7"
+                width="16"
+                height="2"
+                rx="1"
+                class="transform origin-center rotate-90 transition duration-200 ease-out"
+                :class="{'rotate-180': expanded}"
+              />
+            </svg>
+            <span
+              >Is there a way to become an Affiliate reseller of this
+              product?</span
+            >
+          </button>
+          <div
+            x-ref="item"
+            class="text-gray-600 overflow-hidden transition-all duration-300 ease-in-out"
+            :style="expanded ? 'max-height: ' + $refs.item.scrollHeight + 'px; opacity: 1' : 'max-height: 0; opacity: 0'"
+          >
+            <p class="pb-5">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </div>
+        </li>
+        <li x-data="{ expanded: true }">
+          <button
+            class="flex items-center w-full text-lg font-medium text-left py-5 border-t border-gray-200"
+            @click="expanded = !expanded"
+            :aria-expanded="expanded"
+          >
+            <svg
+              class="w-4 h-4 fill-current text-blue-500 flex-shrink-0 mr-8 -ml-12"
+              viewBox="0 0 16 16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                y="7"
+                width="16"
+                height="2"
+                rx="1"
+                class="transform origin-center transition duration-200 ease-out"
+                :class="{'rotate-180': expanded}"
+              />
+              <rect
+                y="7"
+                width="16"
+                height="2"
+                rx="1"
+                class="transform origin-center rotate-90 transition duration-200 ease-out"
+                :class="{'rotate-180': expanded}"
+              />
+            </svg>
+            <span
+              >What is the difference between the Free and Paid versions?</span
+            >
+          </button>
+          <div
+            x-ref="item"
+            class="text-gray-600 overflow-hidden transition-all duration-300 ease-in-out"
+            :style="expanded ? 'max-height: ' + $refs.item.scrollHeight + 'px; opacity: 1' : 'max-height: 0; opacity: 0'"
+          >
+            <p class="pb-5">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </div>
+        </li>
+        <li x-data="{ expanded: false }">
+          <button
+            class="flex items-center w-full text-lg font-medium text-left py-5 border-t border-gray-200"
+            @click="expanded = !expanded"
+            :aria-expanded="expanded"
+          >
+            <svg
+              class="w-4 h-4 fill-current text-blue-500 flex-shrink-0 mr-8 -ml-12"
+              viewBox="0 0 16 16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                y="7"
+                width="16"
+                height="2"
+                rx="1"
+                class="transform origin-center transition duration-200 ease-out"
+                :class="{'rotate-180': expanded}"
+              />
+              <rect
+                y="7"
+                width="16"
+                height="2"
+                rx="1"
+                class="transform origin-center rotate-90 transition duration-200 ease-out"
+                :class="{'rotate-180': expanded}"
+              />
+            </svg>
+            <span>How can I change the owner of a workspace?</span>
+          </button>
+          <div
+            x-ref="item"
+            class="text-gray-600 overflow-hidden transition-all duration-300 ease-in-out"
+            :style="expanded ? 'max-height: ' + $refs.item.scrollHeight + 'px; opacity: 1' : 'max-height: 0; opacity: 0'"
+          >
+            <p class="pb-5">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </div>
+        </li>
+        <span class="block border-t border-gray-200" aria-hidden="true"></span>
+      </ul>
     </div>
+  </div>
 </section>

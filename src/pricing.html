@@ -1,36 +1,28 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>Pricing - Simple Demo</title>
-</head>
+  </head>
 
-<body class="font-inter antialiased bg-white text-gray-900 tracking-tight">
-
+  <body class="font-inter antialiased bg-white text-gray-900 tracking-tight">
     <!-- Page wrapper -->
     <div class="flex flex-col min-h-screen overflow-hidden">
+      <!-- Site header -->
+      <%= require('html-loader!./partials/header.html') %>
 
-        <!-- Site header -->
-        <%= require('html-loader!./partials/header.html') %>
+      <!-- Page content -->
+      <main class="flex-grow">
+        <!-- Page sections -->
+        <%= require('html-loader!./partials/pricing-tables.html') %> <%=
+        require('html-loader!./partials/features-table.html') %> <%=
+        require('html-loader!./partials/testimonials-carousel.html') %> <%=
+        require('html-loader!./partials/faqs.html') %> <%=
+        require('html-loader!./partials/cta.html') %>
+      </main>
 
-        <!-- Page content -->
-        <main class="flex-grow">
-            
-            <!-- Page sections -->
-            <%= require('html-loader!./partials/pricing-tables.html') %>
-            <%= require('html-loader!./partials/features-table.html') %>
-            <%= require('html-loader!./partials/testimonials-carousel.html') %>
-            <%= require('html-loader!./partials/faqs.html') %>
-            <%= require('html-loader!./partials/cta.html') %>
-
-        </main>
-
-        <!-- Site footer -->
-        <%= require('html-loader!./partials/footer.html') %>
-
+      <!-- Site footer -->
+      <%= require('html-loader!./partials/footer.html') %>
     </div>
-
-</body>
-
+  </body>
 </html>
