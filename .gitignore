@@ -1,0 +1,11 @@
+# User Config
+node_modules/
+.next
+.idea
+.bashrc
+build/
+.DS_Store
+
+.env
+.yarn
+yarn-error.log

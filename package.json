@@ -1,0 +1,8 @@
+{
+  "name": "lpsci-website",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/kirpnlbr/lpsci-website",
+  "author": "Kirstine Peñalber",
+  "private": true
+}
