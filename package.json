@@ -4,5 +4,12 @@
   "main": "index.js",
   "repository": "https://github.com/kirpnlbr/lpsci-website",
   "author": "Kirstine Peñalber",
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "autoprefixer": "^10.3.1",
+    "postcss": "^8.3.6"
+  },
+  "dependencies": {
+    "tailwindcss": "^2.2.7"
+  }
 }
